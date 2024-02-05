@@ -1,0 +1,23 @@
+{
+    "name": "vpinti/columbans",
+    "description": "School Management System",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/vpinti/framework.git"
+        }
+    ],
+    "require-dev": {
+        "symfony/var-dumper": "6.3.x-dev"
+    },
+    "require": {
+        "php": "^8.1",
+        "pulsar/framework": "^1.0"
+    }
+}

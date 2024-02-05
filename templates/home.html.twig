@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+<div class="bg-light p-5 rounded">
+    <div class="rows">
+	    <div class="col-md-12">
+			<div class="well">
+				<div class="media">
+			        <a class="pull-left" href="#">
+			            <img class="media-object" src="{{ asset('images/CSA bannerjpg.png') }}" width="800px">
+			        </a>
+			    </div>
+			</div>
+	    </div>
+    </div>  
+</div>
+
+<div class="bg-light p-5 rounded">
+    <div class="col-xs-12 col-sm-9">
+		<div class="rows">
+			<div class="well">
+				<fieldset>
+					<legend>
+                        <h4 class="text-center">VISION</h4>
+                    </legend>
+					<p>The Columban Academy is an educative and evangelizing community, 
+						fostering the values of love, life, justice, and care for creation, 
+						an agent of societal transformation and builder of God’s kingdom.
+                    </p>
+				</fieldset>	
+				<fieldset>
+					<legend>
+                        <h4 class="text-center">MISSION</h4>
+                    </legend>
+					<p>The Columban Academy exists to provide quality education and holistic formation to the youth of the Diocese,
+						having a preferential option for the poor, in a Christ-centered environment that cultivates academic
+						excellence and continuous learning.
+                    </p>
+				</fieldset>						
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

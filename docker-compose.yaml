@@ -1,0 +1,38 @@
+version: '3.7'
+
+services:
+    # nginx
+    web:
+        image: madagos/nginx-php:1.0
+        ports:
+            - "80:80"
+    # PHP
+    app:
+        image: madagos/php-composer:1.1
+        environment:
+            MYSQL_HOST: mysql
+            MYSQL_PORT: ${MYSQL_PORT}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_USER: ${MYSQL_USER}
+            REDIS_HOST: cache
+            REDIS_PORT: ${REDIS_PORT}
+        extra_hosts:
+            - host.docker.internal:host-gateway
+    # MySQL
+    mysql:
+        image: mysql:8.0
+        volumes:
+            - mysqldata:/var/lib/mysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+    # redis
+    cache:
+        image: redis:latest
+
+volumes:
+    mysqldata:
